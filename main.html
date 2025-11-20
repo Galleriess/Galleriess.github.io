@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuzheng Chen | Research Engineer</title>
+    <meta name="description" content="Academic portfolio of Yuzheng Chen, Research Engineer specializing in Pattern Recognition and Agent Design.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a', // Slate 900
+                        secondary: '#334155', // Slate 700
+                        accent: '#2563eb', // Blue 600
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom fade-in animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased leading-relaxed selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50 border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-xl font-bold text-primary tracking-tight">Yuzheng Chen</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm font-medium text-secondary hover:text-accent transition-colors">About</a>
+                    <a href="#experience" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Experience</a>
+                    <a href="#education" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Education</a>
+                    <a href="#publications" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Publications</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-secondary hover:text-primary focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-4 pt-2 pb-4 space-y-1 shadow-lg">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-secondary hover:bg-slate-50 hover:text-accent">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-secondary hover:bg-slate-50 hover:text-accent">Experience</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-secondary hover:bg-slate-50 hover:text-accent">Education</a>
+                <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-secondary hover:bg-slate-50 hover:text-accent">Publications</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
+                <!-- Profile Image -->
+                <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 relative fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-full blur-lg opacity-20 animate-pulse"></div>
+                    
+                    <!-- IMAGE UPDATE: Changed src to profile.jpg -->
+                    <!-- IMPORTANT: Rename your uploaded photo to 'profile.jpg' before uploading to GitHub -->
+                    <img 
+                        src="profile.jpg" 
+                        alt="Yuzheng Chen" 
+                        onerror="this.src='https://ui-avatars.com/api/?name=Yuzheng+Chen&background=0D8ABC&color=fff&size=256'"
+                        class="w-full h-full object-cover rounded-full border-4 border-white shadow-xl relative z-10"
+                    >
+                </div>
+
+                <!-- Intro Text -->
+                <div class="text-center md:text-left flex-1 fade-in delay-100">
+                    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4 tracking-tight">
+                        Yuzheng Chen
+                    </h1>
+                    <p class="text-xl text-accent font-medium mb-6">
+                        Research Engineer at Nanyang Technological University
+                    </p>
+                    <p class="text-secondary text-lg leading-relaxed mb-8 max-w-2xl">
+                        I am a researcher passionate about artificial intelligence, specifically within 
+                        pattern recognition systems and autonomous agents. Currently, I am exploring 
+                        bottom-up skill evolution in agent workflows.
+                    </p>
+                    
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="mailto:yuzheng.chen@ntu.edu.sg" class="inline-flex items-center px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors shadow-md">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                            Contact Me
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=RarZHdkAAAAJ&hl=en" target="_blank" class="inline-flex items-center px-5 py-2.5 bg-white text-secondary border border-slate-300 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors">
+                            <i data-lucide="graduation-cap" class="w-4 h-4 mr-2"></i>
+                            Google Scholar
+                        </a>
+                        <a href="https://github.com/" target="_blank" class="inline-flex items-center px-5 py-2.5 bg-white text-secondary border border-slate-300 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors">
+                            <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/jayden-chen-b073ab1aa/" target="_blank" class="inline-flex items-center px-5 py-2.5 bg-white text-secondary border border-slate-300 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors">
+                            <i data-lucide="linkedin" class="w-4 h-4 mr-2"></i>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex items-center mb-12 fade-in">
+                <div class="p-2 bg-blue-100 rounded-lg mr-4">
+                    <i data-lucide="briefcase" class="w-6 h-6 text-accent"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-primary">Professional Experience</h2>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Item 1 -->
+                <div class="relative pl-8 md:pl-0 fade-in delay-100 group">
+                    <!-- Timeline line for desktop -->
+                    <div class="hidden md:block absolute left-[149px] top-16 bottom-[-48px] w-0.5 bg-slate-200 group-last:hidden"></div>
+                    
+                    <div class="md:flex gap-10 items-start">
+                        <div class="hidden md:block w-32 pt-1 text-right flex-shrink-0">
+                            <span class="text-sm font-bold text-accent uppercase tracking-wider">Sep 2025</span>
+                            <div class="text-xs text-slate-400 mt-1">Present</div>
+                        </div>
+                        
+                        <!-- Mobile Date -->
+                        <div class="md:hidden mb-2">
+                            <span class="inline-block px-2 py-1 bg-blue-50 text-accent text-xs font-bold rounded">Sep 2025 - Present</span>
+                        </div>
+
+                        <div class="relative flex-1 bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <!-- Timeline Dot -->
+                            <div class="hidden md:block absolute -left-[45px] top-6 w-3 h-3 bg-accent rounded-full border-4 border-slate-50 box-content"></div>
+                            
+                            <h3 class="text-xl font-bold text-primary">Research Engineer</h3>
+                            <div class="text-lg font-medium text-slate-600 mb-2">Nanyang Technological University (NTU)</div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Conducting research and development in advanced engineering systems. Collaborating with faculty on cutting-edge projects involving intelligent systems and automation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative pl-8 md:pl-0 fade-in delay-200 group">
+                    <div class="md:flex gap-10 items-start">
+                        <div class="hidden md:block w-32 pt-1 text-right flex-shrink-0">
+                            <span class="text-sm font-bold text-secondary uppercase tracking-wider">Feb 2025</span>
+                            <div class="text-xs text-slate-400 mt-1">Sep 2025</div>
+                        </div>
+
+                        <!-- Mobile Date -->
+                        <div class="md:hidden mb-2">
+                            <span class="inline-block px-2 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded">Feb 2025 - Sep 2025</span>
+                        </div>
+
+                        <div class="relative flex-1 bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="hidden md:block absolute -left-[45px] top-6 w-3 h-3 bg-slate-300 rounded-full border-4 border-slate-50 box-content"></div>
+                            
+                            <h3 class="text-xl font-bold text-primary">Research Staff</h3>
+                            <div class="text-lg font-medium text-slate-600 mb-2">A*STAR CFAR (Centre for Frontier AI Research)</div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Contributed to frontier AI research initiatives. Engaged in developing novel algorithms and participating in high-impact research studies focusing on agent workflows.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex items-center mb-12 fade-in">
+                <div class="p-2 bg-indigo-100 rounded-lg mr-4">
+                    <i data-lucide="graduation-cap" class="w-6 h-6 text-indigo-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-primary">Education</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Master's -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 fade-in delay-100">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-xl font-bold text-indigo-600">N</div>
+                        <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded-full">Completed Nov 2025</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-primary mb-1">National University of Singapore (NUS)</h3>
+                    <div class="text-base font-medium text-secondary mb-3">Master of Science</div>
+                    <div class="text-sm text-slate-500">
+                        <span class="font-semibold">Major:</span> Pattern Recognition Systems
+                    </div>
+                </div>
+
+                <!-- Bachelor's -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 fade-in delay-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-xl font-bold text-indigo-600">U</div>
+                        <span class="text-xs font-bold text-slate-500 bg-slate-100 px-2 py-1 rounded-full">Completed Jan 2024</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-primary mb-1">University of Sydney (USYD)</h3>
+                    <div class="text-base font-medium text-secondary mb-3">Bachelor of Engineering</div>
+                    <div class="text-sm text-slate-500">
+                        <span class="font-semibold text-indigo-600">First Class Honours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex items-center mb-12 fade-in">
+                <div class="p-2 bg-emerald-100 rounded-lg mr-4">
+                    <i data-lucide="book-open" class="w-6 h-6 text-emerald-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-primary">Selected Publications</h2>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border-l-4 border-emerald-500 fade-in delay-100 hover:shadow-md transition-all">
+                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-primary leading-tight mb-2">
+                            Rethinking Agent Design: From Top-Down Workflows to Bottom-Up Skill Evolution
+                        </h3>
+                        <p class="text-sm text-slate-500 mb-4 italic">
+                            Yuzheng Chen et al. • arXiv Preprint • 2025
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Agent Design</span>
+                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">Skill Evolution</span>
+                            <span class="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md font-medium">AI Workflows</span>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <a href="https://arxiv.org/abs/2505.17673" target="_blank" class="inline-flex items-center px-4 py-2 bg-emerald-50 text-emerald-700 text-sm font-semibold rounded-lg hover:bg-emerald-100 transition-colors">
+                            <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+                            Read Paper
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-xl font-bold text-primary mb-6">Yuzheng Chen</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="mailto:yuzheng.chen@ntu.edu.sg" class="text-slate-400 hover:text-accent transition-colors">
+                    <span class="sr-only">Email</span>
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+                <a href="https://scholar.google.com/citations?user=RarZHdkAAAAJ&hl=en" target="_blank" class="text-slate-400 hover:text-accent transition-colors">
+                    <span class="sr-only">Google Scholar</span>
+                    <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                </a>
+                <a href="https://github.com/" class="text-slate-400 hover:text-accent transition-colors">
+                    <span class="sr-only">GitHub</span>
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jayden-chen-b073ab1aa/" class="text-slate-400 hover:text-accent transition-colors">
+                    <span class="sr-only">LinkedIn</span>
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <p class="text-slate-400 text-sm">
+                &copy; <span id="year"></span> Yuzheng Chen. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Initially pause animations and observe
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
